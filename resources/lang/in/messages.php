@@ -3573,6 +3573,7 @@
   'i_Accept' => 'मुझे स्वीकार है',
   'i_agree_to_Your' => 'मैं आपके लिए सहमत हूं',
   'i_agree_to_Your_terms' => 'मैं आपकी शर्तों से सहमत हूं',
+  'im_business_user' => 'I am a Business User',
   'i_agree_with_the' => 'मैं सहमत हूं',
   'icon' => 'आइकन',
   'icon_box' => 'आइकन बॉक्स',

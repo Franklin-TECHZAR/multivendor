@@ -18,7 +18,7 @@ trait FileManagerTrait
     protected function upload(string $dir, string $format, $image = null): string
     {
         if (!is_null($image)) {
-            $isOriginalImage = in_array($image->getClientOriginalExtension(), ['gif', 'svg']);
+            $isOriginalImage = in_array($image->getClientOriginalExtension(), ['gif', 'svg', 'pdf']);
             if($isOriginalImage){
                 $imageName = Carbon::now()->toDateString() . "-" . uniqid() . "." . $image->getClientOriginalExtension();
             }else{

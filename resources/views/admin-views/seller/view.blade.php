@@ -205,6 +205,31 @@
                                     <span>:</span>
                                     <span class="value">{{$seller?->shop->address}}</span>
                                 </div>
+                                @if($seller?->shop->trade_license)
+                                    <div>
+                                        <span class="key">{{translate('Trade license')}}</span>
+                                        <span>:</span>
+                                        <a target="_blank" href="{{ url('storage/app/public/shop/trade_license/'.$seller?->shop->trade_license) }}"><span class="value">{{$seller?->shop->trade_license}}</span></a>
+                                    </div>
+                                @endif
+                                @if($seller?->shop->tax_certificate)
+                                    <div>
+                                        <span class="key">{{translate('Tax certificate')}}</span>
+                                        <span>:</span>
+                                        <a target="_blank" href="{{ url('storage/app/public/shop/tax_certificate/'.$seller?->shop->tax_certificate) }}"><span class="value">{{$seller?->shop->tax_certificate}}</span></a>
+                                    </div>
+                                @endif
+                                @if($seller?->shop->trn_certificate)
+                                    <div>
+                                        <span class="key">{{translate('TRN certificate')}}</span>
+                                        <span>:</span>
+                                        <a target="_blank" href="{{ url('storage/app/public/shop/trn_certificate/'.$seller?->shop->trn_certificate) }}"><span class="value">{{$seller?->shop->trn_certificate}}</span></a>
+                                    </div>
+                                @endif
+
+
+
+
 
                                 <div>
                                     <span class="key">{{translate('status')}}</span>

@@ -97,6 +97,26 @@
 
                     </div>
                     <div class="col-12">
+                        <label class="custom-control custom-checkbox m-0 d-flex">
+                            <input type="checkbox" class="custom-control-input" name="im_business" id="im_business">
+                            <span class="custom-control-label">
+                                <span>{{ translate('im_business_user') }}</span>
+                            </span>
+                        </label>
+
+                        <div class="row" style="display: none" id="business_name_div">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="form-label font-semibold">{{ translate('business_name')}}</label>
+                                    <input class="form-control text-align-direction" value="{{ old('business_name')}}" type="text" name="business_name"
+                                            placeholder="{{ translate('Ex') }}: {{ translate('Jhone') }}" id="business_name"
+                                            >
+                                    <div class="invalid-feedback">{{ translate('please_enter_your_business_name')}}!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="rtl">
@@ -166,4 +186,20 @@
 
     <script src="{{ theme_asset(path: 'public/assets/front-end/plugin/intl-tel-input/js/intlTelInput.js') }}"></script>
     <script src="{{ theme_asset(path: 'public/assets/front-end/js/country-picker-init.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $("#im_business").change(function(){
+                if($(this).prop("checked") == true)
+                {
+                    $("#business_name_div").show();
+                    $("#business_name").prop("required", true);
+                    // alert("show");
+                }else{
+                    $("#business_name_div").hide();
+                    $("#business_name").prop("required", false);
+                    // alert("hide");
+                }
+            })
+        })
+    </script>
 @endpush

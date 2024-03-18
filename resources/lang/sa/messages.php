@@ -3545,6 +3545,7 @@
   'i_Accept' => 'أنا أتفق',
   'i_agree_to_Your' => 'أنا أوافق على الخاص بك',
   'i_agree_to_Your_terms' => 'أوافق على شروطك',
+  'im_business_user' => 'I am a Business User',
   'i_agree_with_the' => 'أتفق مع',
   'icon' => 'أيقونة',
   'icon_box' => 'صندوق الرمز',

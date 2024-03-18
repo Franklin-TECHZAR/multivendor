@@ -51,6 +51,9 @@ class Shop extends Model
         'vacation_status',
         'temporary_close',
         'banner',
+        'trade_license',
+        'tax_certificate',
+        'trn_certificate'
     ];
 
     /**

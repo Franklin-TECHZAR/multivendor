@@ -3594,6 +3594,7 @@
   'i_Accept' => 'আমি স্বীকার করছি',
   'i_agree_to_Your' => 'আমি আপনার সাথে সম্মত',
   'i_agree_to_Your_terms' => 'আমি আপনার শর্তাবলী সম্মত',
+  'im_business_user' => 'I am a Business User',
   'i_agree_with_the' => 'আমি তার সাথে একমত',
   'icon' => 'আইকন',
   'icon_box' => 'আইকন বক্স',

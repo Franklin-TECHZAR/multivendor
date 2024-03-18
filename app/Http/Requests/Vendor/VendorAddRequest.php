@@ -35,9 +35,12 @@ class VendorAddRequest extends FormRequest
             'password' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)(?!.*\s).{8,}$/|same:confirm_password',
             'shop_name' => 'required',
             'shop_address' => 'required',
-            'logo'              => 'required|mimes: jpg,jpeg,png,webp,gif,bmp,tif,tiff',
-            'banner'            => 'required|mimes: jpg,jpeg,png,webp,gif,bmp,tif,tiff',
-            'bottom_banner'     => 'mimes: jpg,jpeg,png,webp,gif,bmp,tif,tiff',
+            'logo'              => 'required|mimes:jpg,jpeg,png,webp,gif,bmp,tif,tiff',
+            'banner'            => 'required|mimes:jpg,jpeg,png,webp,gif,bmp,tif,tiff',
+            'bottom_banner'     => 'mimes:jpg,jpeg,png,webp,gif,bmp,tif,tiff',
+            'trade_license'     => 'required|mimes:pdf,jpg,jpeg,png',
+            'tax_certificate'     => 'required|mimes:pdf,jpg,jpeg,png',
+            'trn_certificate'     => 'required|mimes:pdf,jpg,jpeg,png',
         ];
     }
 

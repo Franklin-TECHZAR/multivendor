@@ -69,6 +69,9 @@ class ShopService
             'image' => $this->upload(dir: 'shop/', format: 'webp', image: $request->file('logo')),
             'banner' => $this->upload(dir: 'shop/banner/', format: 'webp', image: $request->file('banner')),
             'bottom_banner' => $this->upload(dir: 'shop/banner/', format: 'webp', image: $request->file('bottom_banner')),
+            'trade_license' => $this->upload(dir: 'shop/trade_license/', format: $request->file('trade_license')->extension(), image: $request->file('trade_license')),
+            'tax_certificate' => $this->upload(dir: 'shop/tax_certificate/', format: $request->file('tax_certificate')->extension(), image: $request->file('tax_certificate')),
+            'trn_certificate'=> $this->upload(dir: 'shop/trn_certificate/', format: $request->file('trn_certificate')->extension(), image: $request->file('trn_certificate')),
         ];
     }
 
