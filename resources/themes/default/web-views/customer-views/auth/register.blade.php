@@ -98,7 +98,7 @@
                     </div>
                     <div class="col-12">
                         <label class="custom-control custom-checkbox m-0 d-flex">
-                            <input type="checkbox" class="custom-control-input" name="im_business" id="im_business">
+                            <input type="checkbox" class="custom-control-input" name="is_business" value="1" id="im_business">
                             <span class="custom-control-label">
                                 <span>{{ translate('im_business_user') }}</span>
                             </span>

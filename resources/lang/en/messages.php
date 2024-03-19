@@ -7867,4 +7867,5 @@
   'Trade license' => 'Trade license',
   'Tax certificate' => 'Tax certificate',
   'TRN certificate' => 'TRN certificate',
+  'registration_successful' => 'Registration successful',
 );

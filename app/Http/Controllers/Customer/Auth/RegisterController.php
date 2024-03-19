@@ -50,6 +50,8 @@ class RegisterController extends Controller
             'email' => $request['email'],
             'phone' => $request['phone'],
             'is_active' => 1,
+            'is_business' => $request['is_business'],
+            'business_name' => $request['business_name'],
             'password' => bcrypt($request['password']),
             'referral_code' => Helpers::generate_referer_code(),
             'referred_by' => (isset($referUser) && $referUser) ? $referUser->id : null,
