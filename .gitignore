@@ -17,3 +17,4 @@ yarn-error.log
 composer-setup.php
 .DS_Store
 app/Providers/RouteServiceProvider.php
+app/Providers/RouteServiceProvider.php
