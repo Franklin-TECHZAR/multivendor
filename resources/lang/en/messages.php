@@ -4968,7 +4968,7 @@
   'estimated_Delivary_Date' => 'Estimated Delivary Date',
   'packaging_order' => 'Packaging order',
   'preparing_Shipment' => 'Preparing Shipment',
-  'order_Shipped' => 'Order Shipped',
+  'order_Shipped' => 'Order Delivered',
   'view_Order_Details' => 'View Order Details',
   'track_Order_Result' => 'Track Order Result',
   'Invalid Phone Number' => 'Invalid Phone Number',
@@ -7868,4 +7868,9 @@
   'Tax certificate' => 'Tax certificate',
   'TRN certificate' => 'TRN certificate',
   'registration_successful' => 'Registration successful',
+  'category_image_is_required' => 'Category image is required',
+  '_products_under_this_brand' => ' products under this brand',
+  'select_shipping_method' => 'Select shipping method',
+  '_once_you_change_the_status_to_paid' => ' once you change the status to paid',
+  'great' => 'Great',
 );
