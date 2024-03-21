@@ -76,6 +76,9 @@
                                     <img src="{{getValidImage(path: 'storage/app/public/profile/'.$customer->image,type:'backend-profile')}}"
                                          class="avatar rounded-circle " alt="" width="40">
                                     {{Str::limit($customer['f_name']." ".$customer['l_name'],20)}}
+                                    @if($customer['is_business'] == 1)
+                                        <span class="text-primary"><i class="tio-star"></i></span>
+                                    @endif
                                 </a>
                             </td>
                             <td>

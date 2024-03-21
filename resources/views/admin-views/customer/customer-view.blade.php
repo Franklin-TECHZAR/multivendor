@@ -143,6 +143,9 @@
                                 </div>
                                 <div class="media-body d-flex flex-column gap-1">
                                     <span class="title-color hover-c1"><strong>{{$customer['f_name'].' '.$customer['l_name']}}</strong></span>
+                                    @if ($customer['business_name'])
+                                    <span class="text-danger">{{$customer['business_name']}}</span>
+                                    @endif
                                     <span class="title-color">
                                         <strong>{{count($customer['orders'])}} </strong>{{translate('orders')}}
                                     </span>
