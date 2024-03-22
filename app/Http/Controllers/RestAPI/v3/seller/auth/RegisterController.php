@@ -29,7 +29,9 @@ class RegisterController extends Controller
             'image'         => 'required|mimes: jpg,jpeg,png,gif',
             'logo'          => 'required|mimes: jpg,jpeg,png,gif',
             'banner'        => 'required|mimes: jpg,jpeg,png,gif',
-            'bottom_banner' => 'mimes: jpg,jpeg,png,gif',
+            'trade_license' => 'required|mimes: jpg,jpeg,png,gif',
+            'tax_certificate'=> 'required|mimes: jpg,jpeg,png,gif,pdf',
+            'trn_certificate'=> 'required|mimes: jpg,jpeg,png,gif,pdf',
         ]);
 
         if ($validator->fails()) {
