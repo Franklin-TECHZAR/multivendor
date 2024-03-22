@@ -11,7 +11,7 @@ class ImageManager
     public static function upload(string $dir, string $format, $image, $file_type = 'image')
     {
         if ($image != null) {
-            if(in_array($image->getClientOriginalExtension(), ['gif', 'svg'])){
+            if(in_array($image->getClientOriginalExtension(), ['gif', 'svg', 'pdf'])){
                 $imageName = Carbon::now()->toDateString() . "-" . uniqid() . "." . $image->getClientOriginalExtension();
             }else{
                 $image_webp =  Image::make($image)->encode($format, 90);
@@ -22,7 +22,7 @@ class ImageManager
                 Storage::disk('public')->makeDirectory($dir);
             }
 
-            if(in_array($image->getClientOriginalExtension(), ['gif', 'svg'])) {
+            if(in_array($image->getClientOriginalExtension(), ['gif', 'svg', 'pdf'])) {
                 Storage::disk('public')->put($dir . $imageName, file_get_contents($image));
             }else{
                 Storage::disk('public')->put($dir . $imageName, $image_webp);

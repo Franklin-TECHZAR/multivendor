@@ -56,6 +56,9 @@ class RegisterController extends Controller
             $shop->image = ImageManager::upload('shop/', 'webp', $request->file('logo'));
             $shop->banner = ImageManager::upload('shop/banner/', 'webp', $request->file('banner'));
             $shop->bottom_banner = ImageManager::upload('shop/banner/', 'webp', $request->file('bottom_banner'));
+            $shop->trade_license = ImageManager::upload('shop/trade_license/', $request->file('trade_license')->extension(), $request->file('trade_license'));
+            $shop->tax_certificate = ImageManager::upload('shop/tax_certificate/', $request->file('tax_certificate')->extension(), $request->file('tax_certificate'));
+            $shop->trn_certificate = ImageManager::upload('shop/trn_certificate/', $request->file('trn_certificate')->extension(), $request->file('trn_certificate'));
             $shop->save();
 
             DB::table('seller_wallets')->insert([
