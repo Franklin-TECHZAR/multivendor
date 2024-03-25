@@ -20,7 +20,8 @@ class AdminMiddleware
         if (Auth::guard('admin')->check()) {
             return $next($request);
         }else{
-            abort(404);
+            // abort(404);
+            return redirect('login/' . getWebConfig(name: 'admin_login_url'));
         }
     }
 }
