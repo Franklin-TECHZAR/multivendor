@@ -7873,4 +7873,6 @@
   'select_shipping_method' => 'Select shipping method',
   '_once_you_change_the_status_to_paid' => ' once you change the status to paid',
   'great' => 'Great',
+  'The_phone_has_already_been_taken' => 'The phone has already been taken',
+  'Registration_Complete' => 'Registration Complete',
 );

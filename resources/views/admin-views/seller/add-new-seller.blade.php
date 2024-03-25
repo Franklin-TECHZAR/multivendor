@@ -203,6 +203,30 @@
                     </div>
                     @endif
 
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Trade license <span class="text-danger">*</span></label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input " name="trade_license" accept=".jpg, .png, .jpeg, .pdf" required>
+                                <label class="custom-file-label">Upload Trade License</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Tax certificate <span class="text-danger">*</span></label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="tax_certificate" accept=".jpg, .png, .jpeg, .pdf" required>
+                                <label class="custom-file-label">Upload Tax certificate</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>TRN certificate <span class="text-danger">*</span></label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="trn_certificate" accept=".jpg, .png, .jpeg, .pdf" required>
+                                <label class="custom-file-label">Upload TRN certificate</label>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="d-flex align-items-center justify-content-end gap-10">
