@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
@@ -100,7 +101,13 @@ class LoginController extends BaseController
 
     public function logout(): RedirectResponse
     {
-        $this->adminService->logout();
+        $this->adminService->logout();$this->adminService->logout();
+
+        $cookieNames = array_keys(request()->cookies->all());
+        foreach($cookieNames as $da)
+        {
+            Cookie::queue(Cookie::forget($da));
+        }
         session()->flash('success', translate('logged out successfully'));
         return redirect('login/' . getWebConfig(name: 'admin_login_url'));
     }
