@@ -41,6 +41,7 @@ class SMSModuleController extends BaseController
         $smsGateways = $smsGatewaysList->sortBy(function ($item) {
             return count($item['live_values']);
         })->values()->all();
+        
 
         $paymentUrl = $this->settingService->getVacationData(type: 'sms_setup');
         return view(SMSModule::VIEW[VIEW], compact('smsGateways', 'paymentGatewayPublishedStatus', 'paymentUrl'));
@@ -59,7 +60,7 @@ class SMSModuleController extends BaseController
         ]);
 
         if ($request['status'] == 1) {
-            foreach (['releans', 'twilio', 'nexmo', '2factor', 'msg91', 'hubtel', 'paradox', 'signal_wire', '019_sms', 'viatech', 'global_sms', 'akandit_sms', 'sms_to', 'alphanet_sms'] as $gateway) {
+            foreach (['releans', 'twilio', 'nexmo', '2factor', 'msg91', 'hubtel', 'paradox', 'signal_wire', '019_sms', 'viatech', 'global_sms', 'akandit_sms', 'sms_to', 'alphanet_sms', 'edsfze_globalsms'] as $gateway) {
                 $keep = $this->settingRepo->getFirstWhere(params: ['key_name' => $gateway, 'settings_type' => 'sms_config']);
                 if (isset($keep)) {
                     $hold = $keep['live_values'];

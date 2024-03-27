@@ -13,7 +13,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Modules\Gateways\Traits\SmsGateway;
+use App\Traits\SmsGateway;
 
 class LoginController extends Controller
 {

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Nexmo\Laravel\Facade\Nexmo;
 use Twilio\Rest\Client;
+use Illuminate\Support\Facades\Http;
 
 class SMS_module
 {
@@ -43,6 +44,11 @@ class SMS_module
         $config = self::get_settings('alphanet_sms');
         if (isset($config) && $config['status'] == 1) {
             return self::alphanet_sms($receiver, $otp);
+        }
+
+        $config = self::get_settings('edsfze_globalsms');
+        if (isset($config) && $config['status'] == 1) {
+            return self::edsfze_globalsms($receiver, $otp);
         }
 
         return 'not_found';
@@ -231,6 +237,38 @@ class SMS_module
         }
         return $response;
     }
+
+    public static function edsfze_globalsms($receiver, $otp)
+    {
+        $config = self::get_settings('edsfze_globalsms');
+        $response = 'error';
+        if (isset($config) && $config['status'] == 1)
+        {
+            $receiver = str_replace("+", "", $receiver);
+            $message = str_replace("#OTP#", $otp, $config['otp_template']);
+
+            $message = urlencode($message);
+
+
+            $username = $config['username'];
+            $apiId = $config['api_ID'];
+            $source = $config['source'];
+
+            $api_url = "https://globalsms.edsfze.com:1010/API//SendSMS?username=$username&apiId=$apiId&json=True&destination=$receiver&source=$source&text=$message";
+
+            $api_response = Http::get($api_url);
+	        $response_json = $api_response->json();
+
+            if($response_json['ErrorCode'] == 1)
+            {
+                $response = 'success';
+            } else {
+                $response = 'error';
+            }
+        }
+        return $response;
+    }
+
 
     public static function get_settings($name)
     {
