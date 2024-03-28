@@ -155,6 +155,10 @@
                             </div>
                         </div>
                         <div class="card-footer">
+                            <h4 class="mb-4 d-flex align-items-center gap-2">
+                                <img src="{{dynamicAsset(path: 'public/assets/back-end/img/add-new-seller.png')}}" alt="">
+                                {{translate('business')}}
+                            </h4>
 
                             @if ($customer['business_name'])
                                 <div>
