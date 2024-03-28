@@ -7891,4 +7891,11 @@
   'enter_confirm_password' => 'Enter confirm password',
   'reset_password' => 'Reset password',
   'Password_reset_successfully' => 'Password reset successfully',
+  'jhone_shop' => 'Jhone shop',
+  'im_business_customer' => 'Im business customer',
+  'maintenance_Mode_On' => 'Maintenance Mode On',
+  'maintenance-mode' => 'Maintenance-mode',
+  'website_is_under_maintenance' => 'Website is under maintenance',
+  'please_come_back_later' => 'Please come back later',
+  'Phone number already has been taken' => 'Phone number already has been taken',
 );

@@ -544,10 +544,16 @@ $("#customer-login-form").on('submit', function (e) {
 
 $("#customer-register-form").on('submit', function (e) {
     e.preventDefault();
+
+    var form = $('#customer-register-form')[0];
+    var formData = new FormData(form);
+
     $.ajax({
         type: "POST",
         url: $(this).data('action'),
-        data: $(this).serialize(),
+        data: formData,
+        processData: false,
+		contentType: false,
         beforeSend: function () {
             $("#loading").addClass("d-grid");
         },

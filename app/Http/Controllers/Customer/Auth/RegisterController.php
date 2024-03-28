@@ -19,6 +19,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Modules\Gateways\Traits\SmsGateway;
 
@@ -43,6 +44,26 @@ class RegisterController extends Controller
             $referUser = User::where(['referral_code' => $request['referral_code']])->first();
         }
 
+        $trade_license_name = '';
+        $tax_certificate_name = '';
+        $trn_certificate_name = '';
+
+        if($request->hasFile('trade_license'))
+        {
+            $trade_license_name = time().'.'.$request->trade_license->extension();
+            Storage::disk('public')->put("customer_shop/trade_license/" . $trade_license_name, file_get_contents($request->file('trade_license')));
+        }
+        if($request->hasFile('tax_certificate'))
+        {
+            $tax_certificate_name = time().'.'.$request->tax_certificate->extension();
+            Storage::disk('public')->put("customer_shop/tax_certificate/" . $tax_certificate_name, file_get_contents($request->file('tax_certificate')));
+        }
+        if($request->hasFile('trn_certificate'))
+        {
+            $trn_certificate_name = time().'.'.$request->trn_certificate->extension();
+            Storage::disk('public')->put("customer_shop/trn_certificate/" . $trn_certificate_name, file_get_contents($request->file('trn_certificate')));
+        }
+
         $user = User::create([
             'name' => $request['f_name'] . ' ' . $request['l_name'],
             'f_name' => $request['f_name'],
@@ -52,6 +73,9 @@ class RegisterController extends Controller
             'is_active' => 1,
             'is_business' => $request['is_business'],
             'business_name' => $request['business_name'],
+            'trade_license' => $trade_license_name,
+            'tax_certificate' => $tax_certificate_name,
+            'trn_certificate' => $trn_certificate_name,
             'password' => bcrypt($request['password']),
             'referral_code' => Helpers::generate_referer_code(),
             'referred_by' => (isset($referUser) && $referUser) ? $referUser->id : null,

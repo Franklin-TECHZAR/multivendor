@@ -29,7 +29,9 @@ class CustomerRegistrationRequest extends FormRequest
             'email' => 'required|email|unique:users',
             'phone' => 'required|unique:users',
             'password' => 'required|same:con_password',
-
+            'trade_license' => 'mimes:jpeg,jpg,png,gif,pdf',
+            'tax_certificate' => 'mimes:jpeg,jpg,png,gif,pdf',
+            'trn_certificate' => 'mimes:jpeg,jpg,png,gif,pdf',
         ];
     }
 
