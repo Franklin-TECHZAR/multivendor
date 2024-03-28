@@ -143,18 +143,48 @@
                                 </div>
                                 <div class="media-body d-flex flex-column gap-1">
                                     <span class="title-color hover-c1"><strong>{{$customer['f_name'].' '.$customer['l_name']}}</strong></span>
-                                    @if ($customer['business_name'])
-                                    <span class="text-danger">{{$customer['business_name']}}</span>
-                                    @endif
                                     <span class="title-color">
                                         <strong>{{count($customer['orders'])}} </strong>{{translate('orders')}}
                                     </span>
                                     <span class="title-color"><strong>{{$customer['phone']}}</strong></span>
                                     <span class="title-color">{{$customer['email']}}</span>
+
                                 </div>
                                 <div class="media-body text-right">
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-footer">
+
+                            @if ($customer['business_name'])
+                                <div>
+                                    <span class="key">{{translate('business_name')}}</span>
+                                    <span>:</span>
+                                    <span class="text-danger">{{$customer['business_name']}}</span>
+                                </div>
+                            @endif
+
+                            @if($customer['trade_license'])
+                                <div>
+                                    <span class="key">{{translate('Trade license')}}</span>
+                                    <span>:</span>
+                                    <a target="_blank" href="{{ url('storage/app/public/customer_shop/trade_license/'.$customer['trade_license']) }}"><span class="value">{{$customer['trade_license']}}</span></a>
+                                </div>
+                            @endif
+                            @if($customer['tax_certificate'])
+                                <div>
+                                    <span class="key">{{translate('Tax certificate')}}</span>
+                                    <span>:</span>
+                                    <a target="_blank" href="{{ url('storage/app/public/customer_shop/tax_certificate/'.$customer['tax_certificate']) }}"><span class="value">{{$customer['tax_certificate']}}</span></a>
+                                </div>
+                            @endif
+                            @if($customer['trn_certificate'])
+                                <div>
+                                    <span class="key">{{translate('TRN certificate')}}</span>
+                                    <span>:</span>
+                                    <a target="_blank" href="{{ url('storage/app/public/customer_shop/trn_certificate/'.$customer['trn_certificate']) }}"><span class="value">{{$customer['trn_certificate']}}</span></a>
+                                </div>
+                            @endif
                         </div>
                     @endif
                 </div>
