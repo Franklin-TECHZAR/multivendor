@@ -9,6 +9,7 @@ use App\Utils\Helpers;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -22,6 +23,9 @@ class PassportAuthController extends Controller
             'email' => 'required|unique:users',
             'phone' => 'required|unique:users',
             'password' => 'required|min:8',
+            'trade_license' => 'mimes:jpeg,jpg,png,gif,pdf',
+            'tax_certificate' => 'mimes:jpeg,jpg,png,gif,pdf',
+            'trn_certificate' => 'mimes:jpeg,jpg,png,gif,pdf',
         ], [
             'f_name.required' => 'The first name field is required.',
             'l_name.required' => 'The last name field is required.',
@@ -35,6 +39,26 @@ class PassportAuthController extends Controller
             $refer_user = User::where(['referral_code' => $request->referral_code])->first();
         }
 
+        $trade_license_name = '';
+        $tax_certificate_name = '';
+        $trn_certificate_name = '';
+
+        if($request->hasFile('trade_license'))
+        {
+            $trade_license_name = time().'.'.$request->trade_license->extension();
+            Storage::disk('public')->put("customer_shop/trade_license/" . $trade_license_name, file_get_contents($request->file('trade_license')));
+        }
+        if($request->hasFile('tax_certificate'))
+        {
+            $tax_certificate_name = time().'.'.$request->tax_certificate->extension();
+            Storage::disk('public')->put("customer_shop/tax_certificate/" . $tax_certificate_name, file_get_contents($request->file('tax_certificate')));
+        }
+        if($request->hasFile('trn_certificate'))
+        {
+            $trn_certificate_name = time().'.'.$request->trn_certificate->extension();
+            Storage::disk('public')->put("customer_shop/trn_certificate/" . $trn_certificate_name, file_get_contents($request->file('trn_certificate')));
+        }
+
         $temporary_token = Str::random(40);
         $user = User::create([
             'f_name' => $request->f_name,
@@ -46,6 +70,11 @@ class PassportAuthController extends Controller
             'temporary_token' => $temporary_token,
             'referral_code' => Helpers::generate_referer_code(),
             'referred_by' => (isset($refer_user) && $refer_user) ? $refer_user->id : null,
+            'is_business' => $request->is_business,
+            'business_name' => $request->business_name,
+            'trade_license' => $trade_license_name,
+            'tax_certificate' => $tax_certificate_name,
+            'trn_certificate' => $trn_certificate_name,
         ]);
 
         $phone_verification = Helpers::get_business_settings('phone_verification');
