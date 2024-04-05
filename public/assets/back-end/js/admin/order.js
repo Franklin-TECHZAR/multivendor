@@ -523,9 +523,9 @@ function show_location_map() {
     const map = new google.maps.Map(document.getElementById("location_map_canvas"), {
         center: {
             lat: latitude, lng: longitude,
-            zoom: 13,
-            mapTypeId: "roadmap",
-        }
+        },
+        zoom: 13,
+        mapTypeId: "roadmap",
     });
 
     if ($("#is-shipping-exist").data('status') === 'true') {
