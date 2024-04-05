@@ -520,13 +520,19 @@ function show_location_map() {
         lng: longitude
     };
 
-    const map = new google.maps.Map(document.getElementById("location_map_canvas"), {
-        center: {
-            lat: latitude, lng: longitude,
-        },
-        zoom: 13,
-        mapTypeId: "roadmap",
-    });
+    var html_text = `<iframe width="100%" height="100%"
+                        src="https://maps.google.com/maps?q=${latitude},${longitude}&hl=es&z=14&amp;output=embed">
+                    </iframe>`;
+    
+    $("#location_map_canvas").html(html_text);
+
+    // const map = new google.maps.Map(document.getElementById("location_map_canvas"), {
+    //     center: {
+    //         lat: latitude, lng: longitude,
+    //     },
+    //     zoom: 13,
+    //     mapTypeId: "roadmap",
+    // });
 
     if ($("#is-shipping-exist").data('status') === 'true') {
         var marker = new google.maps.Marker({
