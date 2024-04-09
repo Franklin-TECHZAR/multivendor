@@ -30,7 +30,15 @@ function shipping_method_select(get_value){
     let shipping_method_id = $('.select_shipping_address.active input[name="shipping_method_id"]').val()
     let shipping_value= JSON.parse(get_value);
     $('#name').val(shipping_value.contact_person_name);
-    $('#phone').val(shipping_value.phone);
+
+    var phoneNumber = shipping_value.phone;
+    var countryCodeList = [
+        '1', '93', '355', '213', '376', '244', '54', '374', '61', '43', '994', '973', '880', '375', '32', '501', '229', '975', '591', '387', '267', '55', '673', '359', '226', '257', '238', '855', '237', '236', '235', '56', '86', '57', '269', '242', '506', '385', '53', '357', '420', '243', '45', '253', '593', '20', '503', '240', '291', '372', '268', '251', '679', '358', '33', '241', '220', '995', '49', '233', '30', '502', '224', '245', '592', '509', '504', '36', '354', '91', '62', '98', '964', '353', '972', '39', '225', '81', '962', '7', '254', '686', '965', '996', '856', '371', '961', '266', '231', '218', '423', '370', '352', '261', '265', '60', '960', '223', '356', '692', '222', '230', '52', '691', '373', '377', '976', '382', '212', '258', '95', '264', '674', '977', '31', '64', '505', '227', '234', '850', '389', '47', '968', '92', '680', '970', '507', '675', '595', '51', '63', '48', '351', '974', '40', '7', '250', '685', '378', '239', '966', '221', '381', '248', '232', '65', '421', '386', '677', '252', '27', '82', '211', '34', '94', '249', '597', '46', '41', '963', '886', '992', '255', '66', '670', '228', '676', '216', '90', '993', '688', '256', '380', '971', '44', '598', '998', '678', '379', '58', '84', '967'
+    ];
+    var countryCodeRegex = new RegExp('^\\+(' + countryCodeList.join('|') + ')\\s?');
+    var cleanedNumber = phoneNumber.replace(countryCodeRegex, '');
+
+    $('#phone').val(cleanedNumber);
     $('#phone').keypress();
     $('#address').val(shipping_value.address);
     $('#city').val(shipping_value.city);
@@ -59,7 +67,15 @@ function billing_method_select(get_billing_value){
     let billing_value= JSON.parse(get_billing_value);
     let billing_method_id = $('.select_billing_address.active input[name="billing_method_id"]').val()
     $('#billing_contact_person_name').val(billing_value.contact_person_name);
-    $('#billing_phone').val(billing_value.phone);
+    
+    var phoneNumber = billing_value.phone;
+    var countryCodeList = [
+        '1', '93', '355', '213', '376', '244', '54', '374', '61', '43', '994', '973', '880', '375', '32', '501', '229', '975', '591', '387', '267', '55', '673', '359', '226', '257', '238', '855', '237', '236', '235', '56', '86', '57', '269', '242', '506', '385', '53', '357', '420', '243', '45', '253', '593', '20', '503', '240', '291', '372', '268', '251', '679', '358', '33', '241', '220', '995', '49', '233', '30', '502', '224', '245', '592', '509', '504', '36', '354', '91', '62', '98', '964', '353', '972', '39', '225', '81', '962', '7', '254', '686', '965', '996', '856', '371', '961', '266', '231', '218', '423', '370', '352', '261', '265', '60', '960', '223', '356', '692', '222', '230', '52', '691', '373', '377', '976', '382', '212', '258', '95', '264', '674', '977', '31', '64', '505', '227', '234', '850', '389', '47', '968', '92', '680', '970', '507', '675', '595', '51', '63', '48', '351', '974', '40', '7', '250', '685', '378', '239', '966', '221', '381', '248', '232', '65', '421', '386', '677', '252', '27', '82', '211', '34', '94', '249', '597', '46', '41', '963', '886', '992', '255', '66', '670', '228', '676', '216', '90', '993', '688', '256', '380', '971', '44', '598', '998', '678', '379', '58', '84', '967'
+    ];
+    var countryCodeRegex = new RegExp('^\\+(' + countryCodeList.join('|') + ')\\s?');
+    var cleanedNumber = phoneNumber.replace(countryCodeRegex, '');
+
+    $('#billing_phone').val(cleanedNumber);
     $('#billing_phone').keypress();
     $('#billing_address').val(billing_value.address);
     $('#billing_city').val(billing_value.city);
@@ -108,6 +124,8 @@ function initAutocomplete() {
         var latlng = new google.maps.LatLng(coordinates['lat'], coordinates['lng']);
         marker.setPosition(latlng);
         map.panTo(latlng);
+
+        alert(coordinates['lat']);
 
         document.getElementById('latitude').value = coordinates['lat'];
         document.getElementById('longitude').value = coordinates['lng'];

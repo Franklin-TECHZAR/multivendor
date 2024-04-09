@@ -4,7 +4,6 @@ function initializePhoneInput(selector, outputSelector) {
     const phoneNumber = phoneInput.value;
     const countryCodeMatch = phoneNumber.replace(/[^0-9]/g, '');
     const initialCountry = countryCodeMatch ? `+${countryCodeMatch}` : $('.system-default-country-code').data('value').toLowerCase();
-
     let phoneInputInit = window.intlTelInput(phoneInput, {
         initialCountry: initialCountry.toLowerCase(),
         showSelectedDialCode: true,
