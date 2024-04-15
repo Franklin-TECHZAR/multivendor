@@ -1296,15 +1296,14 @@ a {
     border-radius: 10px;
 }
 
-.__card .custom-file-label,
 .__card .card-header,
 .__card {
     border-color: rgba(204, 235, 255, 0.4784313725);
 }
-.form-control {
-    border-color: #aaa;
+.__card .custom-file-label,
+.__card .form-control {
+    border-color: #ccc;
 }
-
 .__card.shadow-0 {
     box-shadow: none !important;
 }
