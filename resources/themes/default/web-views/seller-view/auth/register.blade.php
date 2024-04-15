@@ -75,11 +75,12 @@
                     </div>
 
                     <div class="col-sm-12">
-                        <div class="text-center">
+                        <div class="text-center mb-3">
                             <img class="__img-125px object-cover" id="viewer"
                                  src="{{ getValidImage(path: 'public/assets/front-end/img/placeholder/user.png', type: 'avatar') }}" alt="banner image"/>
                         </div>
-                        <div class="custom-file mt-3">
+                        <span style="color: #999;">(.jpg or .png or .pdf, Max 2MB)</span>
+                        <div class="custom-file">
                             <input type="file" name="image" id="custom-file-upload"
                                    class="custom-file-input image-preview-before-upload"
                                    data-preview="#viewer"
@@ -145,21 +146,21 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label>Trade license <span class="text-danger">*</span></label>
+                            <label>Trade license <span class="text-danger">*</span> <span style="color: #999;">(.jpg or .png or .pdf, Max 2MB)</span></label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input " name="trade_license" accept=".jpg, .png, .jpeg, .pdf" required>
-                                <label class="custom-file-label">Upload Trade License</label>
+                                <label class="custom-file-label">Upload Trade License </label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Tax certificate <span class="text-danger">*</span></label>
+                            <label>Tax certificate <span class="text-danger">*</span> <span style="color: #999;">(.jpg or .png or .pdf, Max 2MB)</span></label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="tax_certificate" accept=".jpg, .png, .jpeg, .pdf" required>
                                 <label class="custom-file-label">Upload Tax certificate</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>TRN certificate <span class="text-danger">*</span></label>
+                            <label>TRN certificate <span class="text-danger">*</span> <span style="color: #999;">(.jpg or .png or .pdf, Max 2MB)</span></label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="trn_certificate" accept=".jpg, .png, .jpeg, .pdf" required>
                                 <label class="custom-file-label">Upload TRN certificate</label>

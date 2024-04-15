@@ -95,7 +95,7 @@
 
         @if (isset($main_section_banner))
             <div class="container rtl pt-4 px-0 px-md-3">
-                <a href="{{$main_section_banner->url}}" target="_blank"
+                <a href="{{$main_section_banner->url}}"
                     class="cursor-pointer d-block">
                     <img class="d-block footer_banner_img __inline-63" alt=""
                          src="{{ getValidImage(path: 'storage/app/public/banner/'.$main_section_banner['photo'], type: 'wide-banner') }}">
@@ -103,10 +103,10 @@
             </div>
         @endif
 
-        @php($businessMode = getWebConfig(name: 'business_mode'))
+        {{-- @php($businessMode = getWebConfig(name: 'business_mode'))
         @if ($businessMode == 'multi' && count($top_sellers) > 0)
             @include('web-views.partials._top-sellers')
-        @endif
+        @endif --}}
 
         @include('web-views.partials._deal-of-the-day', ['decimal_point_settings'=>$decimalPointSettings])
 
@@ -116,7 +116,7 @@
                 <div class="container rtl d-sm-none">
                     <div class="row g-3">
                         <div class="col-md-12">
-                            <a href="{{$banner->url}}" class="d-block" target="_blank">
+                            <a href="{{$banner->url}}" class="d-block">
                                 <img class="footer_banner_img __inline-63" alt=""
                                      src="{{ getValidImage(path: 'storage/app/public/banner/'.$banner['photo'], type: 'banner') }}">
                             </a>
@@ -174,7 +174,7 @@
                 <div class="container rtl pt-4 d-sm-none">
                     <div class="row g-3">
                         <div class="col-md-12">
-                            <a href="{{$banner->url}}" class="d-block" target="_blank">
+                            <a href="{{$banner->url}}" class="d-block">
                                 <img class="footer_banner_img __inline-63"  alt=""
                                      src="{{ getValidImage(path: 'storage/app/public/banner/'.$banner['photo'], type: 'banner') }}">
                             </a>
@@ -192,7 +192,7 @@
                     @if(count($footer_banner) <= 2)
                         @foreach($footer_banner as $bannerIndex => $banner)
                             <div class="col-md-6">
-                                <a href="{{$banner->url}}" class="d-block" target="_blank">
+                                <a href="{{$banner->url}}" class="d-block">
                                     <img class="footer_banner_img __inline-63"  alt=""
                                          src="{{ getValidImage(path: 'storage/app/public/banner/'.$banner['photo'], type: 'banner') }}">
                                 </a>
@@ -206,7 +206,7 @@
                         <div class="col-md-6">
                             <div class="{{ count($footerBannerGroup) > 1 ? 'owl-carousel owl-theme footer-banner-slider':'' }}">
                                 @foreach($footerBannerGroup as $banner)
-                                    <a href="{{ $banner['url'] }}" class="d-block" target="_blank">
+                                    <a href="{{ $banner['url'] }}" class="d-block">
                                         <img class="footer_banner_img __inline-63"  alt=""
                                              src="{{ getValidImage(path: 'storage/app/public/banner/'.$banner['photo'], type: 'banner') }}">
                                     </a>
@@ -217,7 +217,7 @@
                         <div class="col-md-6">
                             <div class="{{ count($footerBannerGroup2) > 1 ? 'owl-carousel owl-theme footer-banner-slider':'' }}">
                                 @foreach($footerBannerGroup2 as $banner)
-                                    <a href="{{ $banner['url'] }}" class="d-block" target="_blank">
+                                    <a href="{{ $banner['url'] }}" class="d-block">
                                         <img class="footer_banner_img __inline-63"  alt=""
                                              src="{{ getValidImage(path: 'storage/app/public/banner/'.$banner['photo'], type: 'banner') }}">
                                     </a>

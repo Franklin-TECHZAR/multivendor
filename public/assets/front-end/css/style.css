@@ -1298,8 +1298,11 @@ a {
 
 .__card .custom-file-label,
 .__card .card-header,
-.__card .form-control {
+.__card {
     border-color: rgba(204, 235, 255, 0.4784313725);
+}
+.form-control {
+    border-color: #aaa;
 }
 
 .__card.shadow-0 {
