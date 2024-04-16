@@ -1131,7 +1131,10 @@ label {
 }
 
 .form-control {
-    border-color: rgb(208, 219, 233);
+    border-color: #8c98a4;
+}
+.custom-select {
+    border-color: #8c98a4 !important;
 }
 
 .form-control:focus {

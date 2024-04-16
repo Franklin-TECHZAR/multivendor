@@ -7898,4 +7898,5 @@
   'website_is_under_maintenance' => 'Website is under maintenance',
   'please_come_back_later' => 'Please come back later',
   'Phone number already has been taken' => 'Phone number already has been taken',
+  'vendor signup/login' => 'Vendor signup/login',
 );

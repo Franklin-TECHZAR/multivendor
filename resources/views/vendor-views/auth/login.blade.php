@@ -106,7 +106,7 @@
                             @else
                                 <div class="row py-2">
                                     <div class="col-6 pr-0">
-                                        <input type="text" class="form-control __h-40 border-0" name="vendorRecaptchaKey" value=""
+                                        <input type="text" class="form-control" name="vendorRecaptchaKey" value=""
                                                placeholder="{{translate('enter_captcha_value')}}" autocomplete="off">
                                     </div>
                                     <div class="col-6 input-icons mb-2 w-100 rounded bg-white">
