@@ -36,7 +36,7 @@
         <div class="{{Session::get('direction') === "rtl" ? 'pr-xl-2' : 'pl-xl-2'}}">
             <div class="owl-theme owl-carousel hero-slider">
                 @foreach($main_banner as $key=>$banner)
-                <a href="{{$banner['url']}}" class="d-block" target="_blank">
+                <a href="{{$banner['url']}}" class="d-block">
                     <img class="w-100 __slide-img" alt=""
                          src="{{ getValidImage(path: 'storage/app/public/banner/'.$banner['photo'], type: 'banner') }}">
                 </a>
