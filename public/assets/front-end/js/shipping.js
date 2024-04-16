@@ -125,7 +125,7 @@ function initAutocomplete() {
         marker.setPosition(latlng);
         map.panTo(latlng);
 
-        alert(coordinates['lat']);
+        // alert(coordinates['lat']);
 
         document.getElementById('latitude').value = coordinates['lat'];
         document.getElementById('longitude').value = coordinates['lng'];
