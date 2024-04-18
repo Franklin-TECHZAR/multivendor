@@ -8573,3 +8573,8 @@ input.form-control.fz-30 {
     transition: all 300ms ease;
     inset-inline-start: 14px;
 }
+
+.search_form .search-bar-input
+{
+    background: #eee;
+}
