@@ -969,10 +969,10 @@ class Helpers
 
     public static function gen_mpdf($view, $file_prefix, $file_postfix)
     {
-        $mpdf = new \Mpdf\Mpdf(['default_font' => 'FreeSerif', 'mode' => 'utf-8']);
+        $mpdf = new \Mpdf\Mpdf(['default_font' => 'FreeSerif', 'mode' => 'utf-8', 'format' => [190, 250]]);
         $mpdf->autoScriptToLang = true;
         $mpdf->autoLangToFont = true;
-        
+        $mpdf->img_dpi = 96;
         $mpdf_view = $view;
         $mpdf_view = $mpdf_view->render();
         
