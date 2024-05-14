@@ -17,7 +17,7 @@
                 {{ ucwords('order Invoice')}}
             </th>
             <th class="p-0 text-right">
-                <img height="40" src="https://logowik.com/content/uploads/images/tucan112.logowik.com.webp"
+                <img src="https://logowik.com/content/uploads/images/tucan112.logowik.com.webp"
                      alt="">
             </th>
         </tr>
