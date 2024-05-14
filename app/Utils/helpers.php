@@ -977,7 +977,6 @@ class Helpers
         $mpdf_view = $mpdf_view->render();
         
         $mpdf->WriteHTML($mpdf_view);
-        $mpdf->SetCompressionLevel(0);
         $mpdf->Output($file_prefix . $file_postfix . '.pdf', 'D');
     }
 
