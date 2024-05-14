@@ -170,7 +170,7 @@
             ?>
             <tbody>
             @foreach($order->details as $key=>$details)
-                    <?php $subTotal = ($details['price']) * $details->qty ?>
+                    <?php //$subTotal = ($details['price']) * $details->qty ?>
                 <tr>
                     <td>{{$key+1}}</td>
                     <td>
