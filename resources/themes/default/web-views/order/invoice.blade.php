@@ -17,7 +17,7 @@
                 {{ ucwords('order Invoice')}}
             </th>
             <th class="p-0 text-right">
-                <img src="https://logowik.com/content/uploads/images/tucan112.logowik.com.webp"
+                <img height="40" src="{{dynamicStorage(path: "storage/app/public/company/".getWebConfig(name: 'company_web_logo'))}}"
                      alt="">
             </th>
         </tr>
