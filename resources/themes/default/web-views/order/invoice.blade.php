@@ -17,9 +17,13 @@
                 {{ ucwords('order Invoice')}}
             </th>
             <th class="p-0 text-right">
-                {{ $order->seller->shop->image }}
+                {{-- {{ $order->seller->shop->image }}
                 <img height="40" src="{{dynamicStorage(path: "storage/app/public/company/".getWebConfig(name: 'company_web_logo'))}}"
-                     alt="">
+                     alt=""> --}}
+
+             
+                     <img height="40" src="{{dynamicStorage(path: "storage/app/public/shop/".$order->seller->shop->image)}}"
+                          alt="">
             </th>
         </tr>
     </table>
