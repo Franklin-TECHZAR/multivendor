@@ -22,7 +22,7 @@
                      alt=""> --}}
 
              
-                     <img height="40" src="{{dynamicStorage(path: "storage/app/public/shop/".$order->seller->shop->image)}}"
+                     <img src="{{dynamicStorage(path: "storage/app/public/shop/".$order->seller->shop->image)}}"
                           alt="">
             </th>
         </tr>
