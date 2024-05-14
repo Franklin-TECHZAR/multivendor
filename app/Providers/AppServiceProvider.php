@@ -88,7 +88,6 @@ class AppServiceProvider extends ServiceProvider
                         'decimal_point_settings' => !empty(\App\Utils\Helpers::get_business_settings('decimal_point_settings')) ? \App\Utils\Helpers::get_business_settings('decimal_point_settings') : 0,
                         'seller_registration' => BusinessSetting::where(['type' => 'seller_registration'])->first()->value,
                         'wallet_status' => Helpers::get_business_settings('wallet_status'),
-                        'company_name' => Helpers::get_business_settings('company_name'),
                         'loyalty_point_status' => Helpers::get_business_settings('loyalty_point_status'),
                         'guest_checkout_status' => Helpers::get_business_settings('guest_checkout'),
                     ];
