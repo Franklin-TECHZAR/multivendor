@@ -17,7 +17,7 @@
                 {{ ucwords('order Invoice')}}
             </th>
             <th class="p-0 text-right">
-                <img height="40" width="100%" style="object-fit:fill" src="{{dynamicStorage(path: "storage/app/public/company/".getWebConfig(name: 'company_web_logo'))}}"
+                <img src="{{dynamicStorage(path: "storage/app/public/company/".getWebConfig(name: 'company_web_logo'))}}"
                      alt="">
             </th>
         </tr>
