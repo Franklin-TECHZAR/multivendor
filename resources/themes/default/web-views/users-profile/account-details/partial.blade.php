@@ -55,8 +55,8 @@
 <div class="order-details-nav overflow-auto nav-menu gap-3 gap-xl-30 mb-4 text-capitalize d-flex">
     <button data-link="{{ route('account-order-details', ['id'=>$order->id]) }}"
             class="get-view-by-onclick {{Request::is('account-order-details')  ? 'active' :''}}">{{translate('order_summary')}}</button>
-    <button data-link="{{ route('account-order-details-vendor-info', ['id'=>$order->id]) }}"
-            class="get-view-by-onclick {{Request::is('account-order-details-vendor-info')  ? 'active' :''}}">{{translate('vendor_info')}}</button>
+    {{-- <button data-link="{{ route('account-order-details-vendor-info', ['id'=>$order->id]) }}"
+            class="get-view-by-onclick {{Request::is('account-order-details-vendor-info')  ? 'active' :''}}">{{translate('vendor_info')}}</button> --}}
     @if($order->order_type != 'POS')
         @if(!$isOrderOnlyDigital)
             <button data-link="{{ route('account-order-details-delivery-man-info', ['id'=>$order->id]) }}"
