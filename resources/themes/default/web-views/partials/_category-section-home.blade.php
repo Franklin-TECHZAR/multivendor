@@ -4,7 +4,7 @@
             <div>
                 <div class="card __shadow h-100 max-md-shadow-0">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between">
+                        {{-- <div class="d-flex justify-content-between">
                             <div class="categories-title m-0">
                                 <span class="font-semibold">{{ translate('categories')}}</span>
                             </div>
@@ -14,9 +14,9 @@
                                     <i class="czi-arrow-{{Session::get('direction') === "rtl" ? 'left mr-1 ml-n1 mt-1 float-left' : 'right ml-1 mr-n1'}}"></i>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="d-none d-md-block">
-                            <div class="row mt-3">
+                            <div class="row owl-theme owl-carousel categories-main--slider mt-3 d-block">
                                 @foreach($categories as $key => $category)
                                     @if ($key<10)
                                         <div class="text-center __m-5px __cate-item">

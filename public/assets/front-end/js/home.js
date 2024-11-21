@@ -309,6 +309,45 @@ $(document).ready(function (){
         },
     })
 
+    $('.categories-main--slider').owlCarousel({
+        loop: false,
+        autoplay: false,
+        margin: 20,
+        nav: true,
+        dots: true,
+        autoplayHoverPause: true,
+        rtl: directionFromSession === 'rtl',
+        ltr: directionFromSession === 'ltr',
+        responsive: {
+            0: {
+                items: 3
+            },
+            360: {
+                items: 3.2
+            },
+            375: {
+                items: 3.5
+            },
+            540: {
+                items: 4
+            },
+            576: {
+                items: 5
+            },
+            768: {
+                items: 6
+            },
+            992: {
+                items: 8
+            },
+            1200: {
+                items: 8
+            },
+            1400: {
+                items: 8
+            }
+        },
+    })
     $('.categories--slider').owlCarousel({
         loop: false,
         autoplay: true,

@@ -216,7 +216,7 @@
                             <i class="tio-clear __text-26px"></i>
                         </button>
                     </div>
-                    @php($categories=\App\Models\Category::with(['childes.childes'])->where('position', 0)->priority()->paginate(11))
+                    {{-- @php($categories=\App\Models\Category::with(['childes.childes'])->where('position', 0)->priority()->paginate(11))
                     <ul class="navbar-nav mega-nav pr-lg-2 pl-lg-2 mr-2 d-none d-md-block __mega-nav">
                         <li class="nav-item {{!request()->is('/')?'dropdown':''}}">
 
@@ -289,10 +289,18 @@
                                 @endforeach
                             </ul>
                         </li>
-                    </ul>
+                    </ul> --}}
+                    @php($categories = \App\Models\Category::where('home_status', true)->priority()->get())
+
 
                     <ul class="navbar-nav">
+                        @foreach ( $categories as $category )
                         <li class="nav-item dropdown {{request()->is('/')?'active':''}}">
+                            <a class="nav-link" href="#">{{ translate($category->name)}}</a>
+                        </li>
+                        @endforeach
+
+                        {{-- <li class="nav-item dropdown {{request()->is('/')?'active':''}}">
                             <a class="nav-link" href="{{route('home')}}">{{ translate('home')}}</a>
                         </li>
 
@@ -389,7 +397,7 @@
                                     </div>
                                 </li>
                             @endif
-                        @endif
+                        @endif --}}
                     </ul>
                     @if(auth('customer')->check())
                         <div class="logout-btn mt-auto d-md-none">

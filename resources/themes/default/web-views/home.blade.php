@@ -31,6 +31,8 @@
             @include('web-views.partials._flash-deal', ['decimal_point_settings'=>$decimalPointSettings])
         @endif
 
+        @include('web-views.partials._category-section-home')
+
         @if ($featured_products->count() > 0 )
             <div class="container py-4 rtl px-0 px-md-3">
                 <div class="__inline-62 pt-3">
@@ -64,7 +66,6 @@
             </div>
         @endif
 
-        @include('web-views.partials._category-section-home')
 
         @if($web_config['featured_deals'] && (count($web_config['featured_deals'])>0))
             <section class="featured_deal">
