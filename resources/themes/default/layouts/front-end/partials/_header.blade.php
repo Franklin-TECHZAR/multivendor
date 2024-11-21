@@ -10,7 +10,7 @@
 
 
 <header class="rtl __inline-10">
-    <div class="topbar">
+    {{-- <div class="topbar">
         <div class="container">
 
             <div>
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="navbar-sticky bg-light mobile-head">
