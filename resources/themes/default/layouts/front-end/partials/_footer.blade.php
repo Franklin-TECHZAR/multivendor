@@ -50,7 +50,7 @@
     </div>
 
     <footer class="page-footer font-small mdb-color rtl">
-        <div class="pt-4 custom-light-primary-color-20">
+        <div class="pt-4 web--bg-primary">
             <div class="container text-center __pb-13px">
 
                 <div
@@ -305,7 +305,7 @@
             </div>
         </div>
 
-        <div class="bg-white-overlay-50">
+        <div class="web--bg-primary">
             <div class="container">
                 <div class="d-flex flex-wrap end-footer footer-end last-footer-content-align">
                     <div class="mt-3">
