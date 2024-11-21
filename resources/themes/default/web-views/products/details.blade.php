@@ -615,7 +615,7 @@
                         </div>
                     @endif
 
-                    @if(getWebConfig(name: 'business_mode')=='multi')
+                    {{-- @if(getWebConfig(name: 'business_mode')=='multi')
                     <div class="__inline-31">
 
                         @if($product->added_by=='seller')
@@ -781,7 +781,7 @@
                             </div>
                         @endif
                     </div>
-                    @endif
+                    @endif --}}
 
                     <div class="pt-4 pb-3">
                         <span class=" __text-16px font-bold text-capitalize">
