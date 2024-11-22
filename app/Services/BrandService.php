@@ -13,7 +13,7 @@ class BrandService
         return [
             'name' => $request['name'][array_search('en', $request['lang'])],
             'image' => $this->upload('brand/', 'webp', $request->file('image')),
-            'status' => 1,
+            'status' => 0,
         ];
     }
 
