@@ -341,7 +341,7 @@
                                         class="text-muted fs-12 mt-1">{{ translate('you_Get_Free_Delivery_Bonus') }}</span>
                                 @else
                                     <span
-                                        class="need-for-free-delivery font-bold fs-12 mt-1 text-primary">{{ webCurrencyConverter(amount: $free_delivery_status['amount_need']) }}</span>
+                                        class="need-for-free-delivery font-bold fs-12 mt-1 text-primary">{{ preg_match('/([\d.]+)([^\d]+)/', webCurrencyConverter(amount: $free_delivery_status['amount_need']), $matches) ? round($matches[1]) . $matches[2] : webCurrencyConverter(amount: $free_delivery_status['amount_need']) }}</span>
                                     <span
                                         class="text-muted fs-12 mt-1">{{ translate('add_more_for_free_delivery') }}</span>
                                 @endif
@@ -650,7 +650,7 @@
                                     class="text-muted fs-12 mt-1">{{ translate('you_Get_Free_Delivery_Bonus') }}</span>
                             @else
                                 <span
-                                    class="need-for-free-delivery font-bold fs-12 mt-1 text-primary">{{ webCurrencyConverter(amount: $free_delivery_status['amount_need']) }}</span>
+                                    class="need-for-free-delivery font-bold fs-12 mt-1 text-primary">{{ preg_match('/([\d.]+)([^\d]+)/', webCurrencyConverter(amount: $free_delivery_status['amount_need']), $matches) ? round($matches[1]) . $matches[2] : webCurrencyConverter(amount: $free_delivery_status['amount_need']) }}</span>
                                 <span class="text-muted fs-12 mt-1">{{ translate('add_more_for_free_delivery') }}</span>
                             @endif
                         </div>

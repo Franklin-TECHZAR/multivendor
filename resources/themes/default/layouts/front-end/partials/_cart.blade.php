@@ -168,9 +168,12 @@
                         <img src="{{theme_asset(path: 'public/assets/front-end/img/truck.svg')}}" alt="">
                         <span
                             class="amount_fullfill text-accent __text-12px {{$free_delivery_status['amount_need'] <= 0 ? '' :'d-none'}}">{{ translate('you_Get_Free_Delivery_Bonus') }}</span>
+
+
                         <small
-                            class="amount_need_to_fullfill {{$free_delivery_status['amount_need'] <= 0 ? 'd-none' :''}}"><span
-                                class="text-accent __text-12px free_delivery_amount_need">{{ webCurrencyConverter(amount: $free_delivery_status['amount_need']) }}</span> {{ translate('add_more_for_free_delivery') }}
+                            class="amount_need_to_fullfill {{$free_delivery_status['amount_need'] <= 0 ? 'd-none' :''}}"><span class="text-accent __text-12px free_delivery_amount_need">
+                                {{ preg_match('/([\d.]+)([^\d]+)/', webCurrencyConverter(amount: $free_delivery_status['amount_need']), $matches) ? round($matches[1]) . $matches[2] : webCurrencyConverter(amount: $free_delivery_status['amount_need']) }}
+                            </span>{{ translate('add_more_for_free_delivery') }}
                         </small>
                         <div class="progress __progress bg-DFEDFF">
                             <div class="progress-bar"
