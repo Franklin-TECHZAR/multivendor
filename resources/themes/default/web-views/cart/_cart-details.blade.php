@@ -696,10 +696,11 @@
                                     data-product-id="all_cart_group">
                                 <option>{{ translate('choose_shipping_method')}}</option>
                                 @foreach($shippings as $shipping)
+                                {{preg_match('/([\d.]+)([^\d]+)/',webCurrencyConverter(amount: $shipping['cost']), $matches);}}
                                     <option
                                         value="{{$shipping['id']}}" {{$chosenShipping['shipping_method_id']==$shipping['id']?'selected':''}}>
                                         {{ translate('shipping_method')}}
-                                        : {{$shipping['title'].' ( '.$shipping['duration'].' ) '.webCurrencyConverter(amount: $shipping['cost'])}}
+                                        : {{$shipping['title'].' ( '.$shipping['duration'].' ) '.($matches[1] == 0.00 ? '' : webCurrencyConverter(amount: $shipping['cost']))}}
                                     </option>
                                 @endforeach
                             </select>
