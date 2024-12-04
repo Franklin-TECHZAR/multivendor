@@ -480,7 +480,7 @@ a {
 
 @media (min-width: 768px) {
     .__top-slider-images .__slide-img {
-        height: 340px;
+        height: 210px;
         -o-object-fit: fill;
         object-fit: fill;
         -o-object-position: left center;
@@ -489,7 +489,7 @@ a {
 }
 @media (min-width: 992px) {
     .__top-slider-images .__slide-img {
-        height: 386px;
+        height: 210px;
         -o-object-fit: fill;
         object-fit: fill;
         -o-object-position: left center;
@@ -6231,9 +6231,9 @@ a {
     -webkit-object-position: right bottom;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1290px) {
     .container {
-        max-width: 1290px;
+        min-width: 1490px !important;
     }
     .recommended-product-card img {
         height: 280px;
@@ -8578,4 +8578,59 @@ input.form-control.fz-30 {
 .search_form .search-bar-input
 {
     background: #eee;
+}
+
+
+.navbar-nav .dropdown-menu.mega-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu.mega-menu {
+    display: block;
+}
+
+.mega-menu .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.mega-menu .row {
+    margin: 0;
+    padding: 0;
+}
+
+.mega-menu .col-md-3 {
+    padding: 10px 15px;
+}
+
+.mega-menu h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mega-menu ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.mega-menu a.dropdown-item {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.mega-menu a.dropdown-item:hover {
+    color: #007bff;
 }

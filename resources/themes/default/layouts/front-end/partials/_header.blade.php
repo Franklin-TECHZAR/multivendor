@@ -209,7 +209,7 @@
         </div>
         <div class="navbar navbar-expand-md navbar-stuck-menu">
             <div class="container px-10px">
-                <div class="collapse navbar-collapse text-align-direction" id="navbarCollapse">
+                <div class="collapse navbar-collapse text-align-direction position-relative w-100" id="navbarCollapse">
                     <div class="w-100 d-md-none text-align-direction">
                         <button class="navbar-toggler p-0" type="button" data-toggle="collapse"
                                 data-target="#navbarCollapse">
@@ -292,13 +292,63 @@
                     </ul> --}}
                     @php($categories = \App\Models\Category::where('home_status', true)->priority()->get())
 
+                    <ul class="navbar-nav" style="overflow-x: scroll; scrollbar-width:none">
 
-                    <ul class="navbar-nav">
+                        @foreach ($categories as $category)
+                        <li class="nav-item dropdown position-static">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="javascript:void(0)"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                {{ translate($category->name) }}
+                            </a>
+
+                            @if ($category->childes->count() > 0) <!-- Check if the category has subcategories -->
+                                <div class="dropdown-menu mega-menu">
+                                    <div class="container">
+                                        <div class="row w-100">
+                                            @foreach ($category->childes as $subCategory)
+                                                <div class="col-md-3">
+                                                    <h6 class="">
+                                                        <a
+                                                            class="dropdown-item fw-bold"
+                                                            href="{{ route('products', ['id' => $subCategory['id'], 'data_from' => 'category', 'page' => 1]) }}">
+                                                            {{ $subCategory->name }}
+                                                        </a>
+                                                    </h6>
+
+                                                    @if ($subCategory->childes->count() > 0) <!-- Check if subcategory has further subcategories -->
+                                                        <ul class="list-unstyled pl-3">
+                                                            @foreach ($subCategory->childes as $subSubCategory)
+                                                                <li>
+                                                                    <a
+                                                                        class="dropdown-item"
+                                                                        href="{{ route('products', ['id' => $subSubCategory['id'], 'data_from' => 'category', 'page' => 1]) }}">
+                                                                        {{ $subSubCategory->name }}
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        </li>
+                    @endforeach
+
+
+
+                    {{-- <ul class="navbar-nav">
                         @foreach ( $categories as $category )
                         <li class="nav-item dropdown {{request()->is('/')?'active':''}}">
                             <a class="nav-link" href="#">{{ translate($category->name)}}</a>
                         </li>
-                        @endforeach
+                        @endforeach --}}
 
                         {{-- <li class="nav-item dropdown {{request()->is('/')?'active':''}}">
                             <a class="nav-link" href="{{route('home')}}">{{ translate('home')}}</a>
