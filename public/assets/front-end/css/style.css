@@ -6233,7 +6233,7 @@ a {
 
 @media screen and (min-width: 1290px) {
     .container {
-        min-width: 1490px !important;
+        max-width: 1490px !important;
     }
     .recommended-product-card img {
         height: 280px;
