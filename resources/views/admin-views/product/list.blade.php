@@ -33,7 +33,7 @@
                                         <option value="" selected>{{ translate('all_store') }}</option>
                                         @foreach ($sellers as $seller)
                                             <option value="{{ $seller->id}}"{{request('seller_id')==$seller->id ? 'selected' :''}}>
-                                                {{ $seller->shop->name }}
+                                                {{ $seller->shop ? $seller->shop->name : '-' }}
                                             </option>
                                         @endforeach
                                     </select>
