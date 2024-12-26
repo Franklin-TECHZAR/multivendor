@@ -32,9 +32,11 @@
                                     <select name="seller_id" class="form-control text-capitalize">
                                         <option value="" selected>{{ translate('all_store') }}</option>
                                         @foreach ($sellers as $seller)
+                                        @if(isset($seller->shop))
                                             <option value="{{ $seller->id}}"{{request('seller_id')==$seller->id ? 'selected' :''}}>
-                                                {{ $seller->shop ? $seller->shop->name : '-' }}
+                                                {{$seller->shop->name}}
                                             </option>
+                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
